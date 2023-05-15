@@ -1,0 +1,427 @@
+{
+	"info": {
+		"_postman_id": "aa68f70a-77e0-4422-b75b-17c331f3d935",
+		"name": "Lerero",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22539870"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "LOGIN",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"expert1\",\r\n    \"password\":\"rahasia\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/auth/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LOGOUT",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/auth/logout?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImZyZCIsInByb2ZpbGUiOiJib2FyZCIsImlhdCI6MTY4NDA2NjI2Nn0.vs88FW63haA2ugnhhZSI8NprvQBhl1dBT3YSOH-EMTU",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"logout"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImZyZCIsInByb2ZpbGUiOiJib2FyZCIsImlhdCI6MTY4NDA2NjI2Nn0.vs88FW63haA2ugnhhZSI8NprvQBhl1dBT3YSOH-EMTU"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "REGISTER",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"farid\",\r\n    \"email\":\"farid@mail.com\",\r\n    \"username\":\"competitor2\",\r\n    \"password\":\"rahasia\",\r\n    \"profile\":\"64606b439b084bfaaa5e39e2\",\r\n    \"skill\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/user?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImZyZCIsInByb2ZpbGUiOiJib2FyZCIsImlhdCI6MTY4NDA2NTk2N30.piMwy6fElVs1yxKU9eITB5R8W5cCiEbdkr9dHnwxIuo",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"user"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImZyZCIsInByb2ZpbGUiOiJib2FyZCIsImlhdCI6MTY4NDA2NTk2N30.piMwy6fElVs1yxKU9eITB5R8W5cCiEbdkr9dHnwxIuo"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "activity",
+			"item": [
+				{
+					"name": "CREATE",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"skill\": \"6460686b9b084bfaaa5e3786\",\r\n    \"title\": \"activity 5\",\r\n    \"description\": \"this is example\",\r\n    \"startDate\": \"2023-02-14\",\r\n    \"endDate\": \"2023-4-20\",\r\n    \"participant\": [\r\n        \"6461dcc24d0784033496fd4c\",\r\n        \"64606b439b084bfaaa5e39e2\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/activity?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImZyZCIsInByb2ZpbGUiOiJleHBlcnQiLCJpYXQiOjE2ODQxMjYxNDF9.QkvIxUc3jVTr08IGNoGL8h-TM3KFE17CmmfJasTulMc",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"activity"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImZyZCIsInByb2ZpbGUiOiJleHBlcnQiLCJpYXQiOjE2ODQxMjYxNDF9.QkvIxUc3jVTr08IGNoGL8h-TM3KFE17CmmfJasTulMc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"skill\": \"6460686b9b084bfaaa5e3786\",\r\n    \"title\": \"activity 123123\",\r\n    \"description\": \"this is example\",\r\n    \"startDate\": \"2023-05-22\",\r\n    \"endDate\": \"2023-7-20\",\r\n    \"participant\": [\r\n        \"6460c3c6537102a2ee984713\",\r\n        \"6460c4be41d2ac4b917b1a55\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/v1/activity/6461ba70d1a66f245188d2c6?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImZyZCIsInByb2ZpbGUiOiJleHBlcnQiLCJpYXQiOjE2ODQxMjY5MzR9.0bGTjW-1VfZc6pN-XDUyU4yrdRkJ4BvAquvZTEMclw0",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"activity",
+								"6461ba70d1a66f245188d2c6"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImZyZCIsInByb2ZpbGUiOiJleHBlcnQiLCJpYXQiOjE2ODQxMjY5MzR9.0bGTjW-1VfZc6pN-XDUyU4yrdRkJ4BvAquvZTEMclw0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/activity/646068549b084bfaaa5e376e?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImZyZCIsInByb2ZpbGUiOiJleHBlcnQiLCJpYXQiOjE2ODQxMjcwNjh9.KGvdJ_VIhGkntKtmYU1e7IYck03zHIcSVzSij2JzBss&limit=2&page=1&order=DESC",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"activity",
+								"646068549b084bfaaa5e376e"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImZyZCIsInByb2ZpbGUiOiJleHBlcnQiLCJpYXQiOjE2ODQxMjcwNjh9.KGvdJ_VIhGkntKtmYU1e7IYck03zHIcSVzSij2JzBss"
+								},
+								{
+									"key": "limit",
+									"value": "2"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "order",
+									"value": "DESC",
+									"description": "ASC or DESCs"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/activity/6461d242fc744f46a0bbc29f?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImZyZCIsInByb2ZpbGUiOiJleHBlcnQiLCJpYXQiOjE2ODQxMjYxNDF9.QkvIxUc3jVTr08IGNoGL8h-TM3KFE17CmmfJasTulMc",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"activity",
+								"6461d242fc744f46a0bbc29f"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImZyZCIsInByb2ZpbGUiOiJleHBlcnQiLCJpYXQiOjE2ODQxMjYxNDF9.QkvIxUc3jVTr08IGNoGL8h-TM3KFE17CmmfJasTulMc"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "skill",
+			"item": [
+				{
+					"name": "GET ONLY SKILL WITH ACTIVITY",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/v1/skills?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImZyZCIsInByb2ZpbGUiOiJleHBlcnQiLCJpYXQiOjE2ODQxMjYxNDF9.QkvIxUc3jVTr08IGNoGL8h-TM3KFE17CmmfJasTulMc",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v1",
+								"skills"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImZyZCIsInByb2ZpbGUiOiJleHBlcnQiLCJpYXQiOjE2ODQxMjYxNDF9.QkvIxUc3jVTr08IGNoGL8h-TM3KFE17CmmfJasTulMc"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "localhost:3000",
+			"type": "string"
+		},
+		{
+			"key": "username",
+			"value": "plmIIoDSgq",
+			"type": "string"
+		},
+		{
+			"key": "password",
+			"value": "IJOa5o08fB9Pv0H4zDee00gwAmBHAcY2",
+			"type": "string"
+		}
+	]
+}
